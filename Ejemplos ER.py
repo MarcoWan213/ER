@@ -4,6 +4,7 @@ import re
 
 opcion = 0
 
+text = "escrito.txt"
 
 while opcion != 11 :
     
