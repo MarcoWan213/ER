@@ -32,8 +32,7 @@ while opcion != 11 :
             rexrex = r"[A-Za-z]{7,}"
             for elemento in lista:
                 if re.search(rexrex, elemento):
-                    print(elemento)
-        texto.close()
+                    print(elemento)        
     elif opcion == 2:                        
         regex = r"[A-Za-z]+"
         reg = re.compile(regex)
@@ -42,8 +41,7 @@ while opcion != 11 :
             regex = r"[A-Za-z]+[^aeiou]$"
             for elemento in lista:
                 if re.search(regex,elemento):
-                    print(elemento)
-        texto.close() 
+                    print(elemento)        
     elif opcion == 3:                
         rex = "[M][^aeiouAEIOU]"
         reg = re.compile(rex)
@@ -51,16 +49,14 @@ while opcion != 11 :
             lista = reg.findall(line)
             for elemento in lista:
                 if re.search(rex, elemento):
-                    print(elemento)
-        texto.close() 
+                    print(elemento)        
     elif opcion == 4:                
         rex = r"(\"([^\"]+)\")"
         reg = re.compile(rex)
         for line in texto:
             lista = reg.findall(line)            
             if re.search(rex, line):
-                print(lista)            
-        texto.close()
+                print(lista)                    
     elif opcion == 5:                
         rex = r"([0-9]{3}\.[0-9]{2}\.[0-9]{1,3}\.[0-9]{1,3})"
         reg = re.compile(rex)
@@ -68,8 +64,7 @@ while opcion != 11 :
             lista = reg.findall(line)
             for elemento in lista:
                 if re.search(rex, elemento):
-                    print(elemento)
-        texto.close()
+                    print(elemento)        
     elif opcion == 6:                
         rex = r"(\d\d\:\d\d\s[AaPp][Mm])"
         reg = re.compile(rex)
@@ -77,8 +72,7 @@ while opcion != 11 :
             lista = reg.findall(line)
             for elem in lista:
                 if re.search(rex, elem):
-                    print(elem)
-        texto.close()
+                    print(elem)        
     elif opcion == 7:                
         rex = r"(\d\d\d\d\d\d\d\d\d\d)"
         reg = re.compile(rex)
@@ -86,8 +80,7 @@ while opcion != 11 :
             lista = reg.findall(line)
             for elem in lista:
                 if re.search(rex, elem):
-                    print(elem)
-        texto.close()
+                    print(elem)        
     elif opcion == 8:                
         rex = r"([0-9a-zA-Z0-9._%+-]+@[0-9a-zA-Z0-9.-]+\.[0-9a-zA-Z]{2,6})"
         reg = re.compile(rex)
@@ -95,28 +88,26 @@ while opcion != 11 :
             lista = reg.findall(line)
             for elem in lista:
                 if re.search(rex, elem):
-                    print(elem)
-        texto.close()
+                    print(elem)        
     elif opcion == 9:                
-        rex = r"(http:|https:\/\/[0-9a-zA-Z0-9._%+-]+\.[0-9a-zA-Z]+\/[^\r\n\s]+)"
+        rex = r"(http:|https:\/\/[0-9a-zA-Z0-9._%+-]+\.[0-9a-zA-Z]+\/[^\r\n\s]+)" #TODO @MarcoWan213 Solucionar
         reg = re.compile(rex)
         for line in texto:
             lista = reg.findall(line)
             for elem in lista:
                 if re.search(rex, elem):
-                    print(elem)
-        texto.close()
+                    print(elem)        
     elif opcion == 10:                
-        rex = r"([1-4][0-9][0-9][0-9][0-9]|0?=[1-9][0-9][0-9][0-9]|5?=[0-2][0-9][0-9][0-9])"
+        rex = r"(\d\d\d\d\d)"
         reg = re.compile(rex)
         for line in texto:
             lista = reg.findall(line)
             for elem in lista:
                 if re.search(rex, elem):
-                    print(elem)
-        texto.close()
+                    print(elem)        
     elif opcion == 11:
         print("El programa se ha cerrado")    
     else :
         print("\n opción no valida, vuelva a ingresar una opcion")
     texto.close
+    print("\n")
