@@ -22,9 +22,9 @@ while opcion != 11 :
 
     opcion = int(input ("Digite su eleccion"))
 
-    if opcion == 1:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    texto = open(text,"r")
+
+    if opcion == 1:                
         rex = r"[a-zA-Z]+"
         reg = re.compile(rex)        
         for line in texto:
@@ -34,20 +34,17 @@ while opcion != 11 :
                 if re.search(rexrex, elemento):
                     print(elemento)
         texto.close()
-    elif opcion == 2:        
-        filename = "escrito.txt"
-        textfile = open(filename, "r")
+    elif opcion == 2:                        
         regex = r"[A-Za-z]+"
         reg = re.compile(regex)
-        for line in textfile:
+        for line in texto:
             lista = reg.findall(line)
             regex = r"[A-Za-z]+[^aeiou]$"
             for elemento in lista:
                 if re.search(regex,elemento):
                     print(elemento)
-    elif opcion == 3:
-        text = "escrito.txt"
-        texto = open(text,"r")
+        texto.close() 
+    elif opcion == 3:                
         rex = "[M][^aeiouAEIOU]"
         reg = re.compile(rex)
         for line in texto:
@@ -56,9 +53,7 @@ while opcion != 11 :
                 if re.search(rex, elemento):
                     print(elemento)
         texto.close() 
-    elif opcion == 4:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    elif opcion == 4:                
         rex = r"(\"([^\"]+)\")"
         reg = re.compile(rex)
         for line in texto:
@@ -66,9 +61,7 @@ while opcion != 11 :
             if re.search(rex, line):
                 print(lista)            
         texto.close()
-    elif opcion == 5:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    elif opcion == 5:                
         rex = r"([0-9]{3}\.[0-9]{2}\.[0-9]{1,3}\.[0-9]{1,3})"
         reg = re.compile(rex)
         for line in texto:
@@ -77,9 +70,7 @@ while opcion != 11 :
                 if re.search(rex, elemento):
                     print(elemento)
         texto.close()
-    elif opcion == 6:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    elif opcion == 6:                
         rex = r"(\d\d\:\d\d\s[AaPp][Mm])"
         reg = re.compile(rex)
         for line in texto:
@@ -88,9 +79,7 @@ while opcion != 11 :
                 if re.search(rex, elem):
                     print(elem)
         texto.close()
-    elif opcion == 7:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    elif opcion == 7:                
         rex = r"(\d\d\d\d\d\d\d\d\d\d)"
         reg = re.compile(rex)
         for line in texto:
@@ -99,9 +88,7 @@ while opcion != 11 :
                 if re.search(rex, elem):
                     print(elem)
         texto.close()
-    elif opcion == 8:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    elif opcion == 8:                
         rex = r"([0-9a-zA-Z0-9._%+-]+@[0-9a-zA-Z0-9.-]+\.[0-9a-zA-Z]{2,6})"
         reg = re.compile(rex)
         for line in texto:
@@ -110,9 +97,7 @@ while opcion != 11 :
                 if re.search(rex, elem):
                     print(elem)
         texto.close()
-    elif opcion == 9:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    elif opcion == 9:                
         rex = r"(http:|https:\/\/[0-9a-zA-Z0-9._%+-]+\.[0-9a-zA-Z]+\/[^\r\n\s]+)"
         reg = re.compile(rex)
         for line in texto:
@@ -121,9 +106,7 @@ while opcion != 11 :
                 if re.search(rex, elem):
                     print(elem)
         texto.close()
-    elif opcion == 10:
-        text = "escrito.txt"
-        texto = open(text,"r")
+    elif opcion == 10:                
         rex = r"([1-4][0-9][0-9][0-9][0-9]|0?=[1-9][0-9][0-9][0-9]|5?=[0-2][0-9][0-9][0-9])"
         reg = re.compile(rex)
         for line in texto:
@@ -136,3 +119,4 @@ while opcion != 11 :
         print("El programa se ha cerrado")    
     else :
         print("\n opción no valida, vuelva a ingresar una opcion")
+    texto.close
